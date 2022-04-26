@@ -15,7 +15,7 @@ router.post('/createFood', controller.createFood);
  *
  * Authorization: false
  */
-router.get('/getAllFoods', controller.getAllFoods);
+router.get('/getAllFoods', controller.getAllFood);
 
 /**
  * GET /api/foods/getFood/:id

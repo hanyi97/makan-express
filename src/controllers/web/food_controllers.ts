@@ -11,7 +11,7 @@ export const createFood = async (req: Request, res: Response) => {
     }
 };
 
-export const getAllFoods = async (req: Request, res: Response) => {
+export const getAllFood = async (req: Request, res: Response) => {
     try {
         const foods = await service.getAll();
         res.status(StatusCodes.OK).json(foods);

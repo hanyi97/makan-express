@@ -11,6 +11,6 @@ const router = express.Router();
  */
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
-router.use('/foods', foodRoutes);
+router.use('/food', foodRoutes);
 
 export default router;

@@ -11,7 +11,7 @@ export const create = async (food: FoodInput): Promise<FoodOutput> => {
 };
 
 /**
- * Retrieve all foods.
+ * Retrieve all food.
  *
  * @returns Promise<FoodOutput[]> Promise that resolves to an array of all foods.
  */
