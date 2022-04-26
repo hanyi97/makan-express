@@ -100,3 +100,4 @@ src
 - [Airbnb Style Guide](https://github.com/airbnb/javascript)
 - [Setup Node.js project with Typescript, ESLint, Prettier, Husky](https://gist.github.com/silver-xu/1dcceaa14c4f0253d9637d4811948437)
 - [Node.js + Express + TypeScript: Unit Tests with Jest](https://losikov.medium.com/part-4-node-js-express-typescript-unit-tests-with-jest-5204414bf6f0)
+- [Sequelize connection API documentation](https://sequelize.org/api/v6/class/src/sequelize.js~sequelize#instance-constructor-constructor)
