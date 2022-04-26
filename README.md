@@ -41,7 +41,7 @@ src
 ├── services        # Services for business logic.
 ├── types           # Extend express types.
 ├── utils           # Utility functions.
-└── app.ts          #  Entry point for the application.
+└── app.ts          # Entry point for the application.
 ```
 
 ### File Structure
