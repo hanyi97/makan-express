@@ -7,9 +7,13 @@ const router = express.Router();
 /**
  * POST /api/users/createUser
  *
- * Authorization: true
+ * Note: Authorization is removed here to allow me to create
+ * a user without logging in. This should be set during the real
+ * development.
+ *
+ * Authorization: false
  */
-router.post('/createUser', authorize, controller.createUser);
+router.post('/createUser', controller.createUser);
 
 /**
  * GET /api/users/getAllUsers
