@@ -8,6 +8,11 @@ import User, { UserInput, UserOutput } from '../models/user';
  * @returns Promise<UserOutput> Promise that resolves to the newly created user.
  */
 export const create = async (user: UserInput): Promise<UserOutput> => {
+    const foundUser = await User.findOne({ where: { email: user.email } });
+    if (foundUser) {
+        throw new Error('User already exists');
+    }
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(user.password, salt);
     user.password = hashedPassword;
