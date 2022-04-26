@@ -34,7 +34,7 @@ npm run lint:fix
 ```
 src
 ├── configs         # DB connections, constants, middleware, etc.
-├── controllers     # Express controllers for routes, responsed to client requests, call services.
+├── controllers     # Express controllers for routes, response to client requests, call services.
 ├── dtos            # Data transfer objects.
 ├── models          # Models for DB.
 ├── routes          # Express routes.
