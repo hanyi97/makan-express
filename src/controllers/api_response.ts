@@ -5,10 +5,10 @@ import { StatusCodes } from 'http-status-codes';
  *
  * @param {string} message
  * @param {object | array} results
- * @param statusCode
+ * @param {number} statusCode Default to 200
  * @returns Returns a JSON object
  */
-export const success = (message: string, results: object | [], statusCode: number) => {
+export const success = (message: string, results: object | [] = {}, statusCode: number = StatusCodes.OK) => {
     if (message) {
         return {
             response: {
@@ -17,6 +17,7 @@ export const success = (message: string, results: object | [], statusCode: numbe
                     message,
                 },
             },
+            code: statusCode,
         };
     }
 
@@ -38,7 +39,7 @@ export const success = (message: string, results: object | [], statusCode: numbe
  * @param statusCode
  * @returns Returns a JSON object
  */
-export const error = (message: string, statusCode: number) => {
+export const error = (message: string, statusCode: number = StatusCodes.INTERNAL_SERVER_ERROR) => {
     const commonCodes = [
         StatusCodes.OK,
         StatusCodes.CREATED,

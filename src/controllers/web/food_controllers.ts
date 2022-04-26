@@ -1,48 +1,67 @@
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import * as service from '../../services/food_service';
+import * as apiResponse from '../api_response';
 
 export const createFood = async (req: Request, res: Response) => {
     try {
         const newFood = await service.create(req.body);
-        res.status(StatusCodes.CREATED).json(newFood);
+
+        const response = apiResponse.success('', newFood, StatusCodes.CREATED);
+        res.status(response.code).json(response.response);
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).send((<Error>error).message);
+        const response = apiResponse.error((<Error>error).message);
+        res.status(response.code).json(response.response);
     }
 };
 
 export const getAllFood = async (req: Request, res: Response) => {
     try {
-        const foods = await service.getAll();
-        res.status(StatusCodes.OK).json(foods);
+        const food = await service.getAll();
+
+        const response = apiResponse.success('', food);
+        res.status(response.code).json(response.response);
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).send((<Error>error).message);
+        const response = apiResponse.error((<Error>error).message);
+        res.status(response.code).json(response.response);
     }
 };
 
 export const getFood = async (req: Request, res: Response) => {
     try {
         const food = await service.getById(Number(req.params.id));
-        res.status(StatusCodes.OK).json(food);
+
+        const response = apiResponse.success('', food);
+        res.status(response.code).json(response.response);
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).send((<Error>error).message);
+        const response = apiResponse.error((<Error>error).message);
+        res.status(response.code).json(response.response);
     }
 };
 
 export const updateFood = async (req: Request, res: Response) => {
     try {
         const updatedFood = await service.update(Number(req.params.id), req.body);
-        res.status(StatusCodes.OK).json(updatedFood);
+
+        const response = apiResponse.success('', updatedFood);
+        res.status(response.code).json(response.response);
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).send((<Error>error).message);
+        const response = apiResponse.error((<Error>error).message);
+        res.status(response.code).json(response.response);
     }
 };
 
 export const deleteFood = async (req: Request, res: Response) => {
     try {
         const deleted = await service.deleteById(Number(req.params.id));
-        res.status(StatusCodes.OK).json(deleted);
+
+        const response = deleted
+            ? apiResponse.success('Food deleted')
+            : apiResponse.error('Food not found', StatusCodes.NOT_FOUND);
+
+        res.status(response.code).json(response.response);
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).send((<Error>error).message);
+        const response = apiResponse.error((<Error>error).message);
+        res.status(response.code).json(response.response);
     }
 };
