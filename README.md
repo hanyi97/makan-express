@@ -8,12 +8,22 @@ Simple ExpressJS api app for demo purposes.
 npm install
 ```
 
-### Development
+### Run Server
+```
+npm start
+```
+
+### Development Mode
 ```
 npm run dev
 ```
 
-### Eslint
+### Check Linting
+```
+npm run lint
+```
+
+### Fix Linting
 ```
 npm run lint:fix
 ```
