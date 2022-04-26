@@ -30,6 +30,22 @@ npm run lint:fix
 ---
 
 ## Project Structure
+### Folder Structure
+```
+src
+├── configs         # DB connections, constants, middleware, etc.
+├── controllers     # Express controllers for routes, responsed to client requests, call services.
+├── dtos            # Data transfer objects.
+├── models          # Models for DB.
+├── routes          # Express routes.
+├── services        # Services for business logic.
+├── types           # Extend express types.
+├── utils           # Utility functions.
+└── app.ts          #  Entry point for the application.
+```
+
+### File Structure
+
 ```
 .
 ├── package-lock.json
