@@ -1,6 +1,7 @@
-require('dotenv').config({ path: __dirname + '/../.env' });
-import { dbInit } from './configs/connection/db_init';
-import { server } from './server';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require("dotenv").config({ path: __dirname + "/../.env" });
+import { dbInit } from "./configs/connection/db_init";
+import { server } from "./server";
 
 dbInit();
 

@@ -1,5 +1,5 @@
-import { AutoIncrement, Column, CreatedAt, DeletedAt, Model, PrimaryKey, Table, UpdatedAt } from 'sequelize-typescript';
-import { Optional } from 'sequelize/types';
+import { AutoIncrement, Column, CreatedAt, DeletedAt, Model, PrimaryKey, Table, UpdatedAt } from "sequelize-typescript";
+import { Optional } from "sequelize/types";
 
 interface FoodAttributes {
     id: number;
@@ -11,7 +11,7 @@ interface FoodAttributes {
     deletedAt?: Date;
 }
 
-export type FoodInput = Optional<FoodAttributes, 'id'>;
+export type FoodInput = Optional<FoodAttributes, "id">;
 export type FoodOutput = FoodAttributes;
 
 @Table({

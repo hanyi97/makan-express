@@ -1,4 +1,4 @@
-import { DataTypes, Optional } from 'sequelize';
+import { DataTypes, Optional } from "sequelize";
 import {
     Model,
     Column,
@@ -9,7 +9,7 @@ import {
     UpdatedAt,
     Default,
     AllowNull,
-} from 'sequelize-typescript';
+} from "sequelize-typescript";
 
 interface UserAttributes {
     id: string;
@@ -24,7 +24,7 @@ interface UserAttributes {
     deletedAt?: Date;
 }
 
-export type UserInput = Optional<UserAttributes, 'id' | 'address'>;
+export type UserInput = Optional<UserAttributes, "id" | "address">;
 export type UserOutput = UserAttributes;
 
 @Table({

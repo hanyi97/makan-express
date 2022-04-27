@@ -1,4 +1,4 @@
-import { StatusCodes } from 'http-status-codes';
+import { StatusCodes } from "http-status-codes";
 
 /**
  * Send any success response.
@@ -12,7 +12,7 @@ export const success = (message: string, results: object | [] = {}, statusCode: 
     if (message) {
         return {
             response: {
-                status: 'success',
+                status: "success",
                 result: {
                     message,
                 },
@@ -23,7 +23,7 @@ export const success = (message: string, results: object | [] = {}, statusCode: 
 
     return {
         response: {
-            status: 'success',
+            status: "success",
             result: {
                 data: results,
             },
@@ -56,7 +56,7 @@ export const error = (message: string, statusCode: number = StatusCodes.INTERNAL
     statusCode = findCode ? findCode : StatusCodes.INTERNAL_SERVER_ERROR;
     return {
         response: {
-            status: 'error',
+            status: "error",
             result: {
                 message,
             },
@@ -75,9 +75,9 @@ export const validation = (errors: object | []) => {
     console.log(errors);
     return {
         response: {
-            status: 'error',
+            status: "error",
             result: {
-                message: 'Validation errors',
+                message: "Validation errors",
             },
         },
         code: StatusCodes.UNPROCESSABLE_ENTITY,

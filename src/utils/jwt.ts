@@ -1,6 +1,6 @@
-import { sign, SignOptions, verify } from 'jsonwebtoken';
-import { UserOutput } from '../models/user';
-import { TokenDTO } from '../dtos/token_dto';
+import { sign, SignOptions, verify } from "jsonwebtoken";
+import { UserOutput } from "../models/user";
+import { TokenDTO } from "../dtos/token_dto";
 
 /**
  * Generates a JWT token for the given user.
@@ -19,11 +19,11 @@ export const generateToken = (user: UserOutput): string => {
 
     const privateKey = process.env.JWT_SECRET_KEY;
     if (!privateKey) {
-        throw new Error('JWT secret is not defined');
+        throw new Error("JWT secret is not defined");
     }
 
     const signInOptions: SignOptions = {
-        expiresIn: '1d',
+        expiresIn: "1d",
     };
 
     return sign(payload, privateKey, signInOptions);
@@ -38,7 +38,7 @@ export const generateToken = (user: UserOutput): string => {
 export const validateToken = async (token: string): Promise<TokenDTO> => {
     const publicKey = process.env.JWT_SECRET_KEY;
     if (!publicKey) {
-        throw new Error('JWT public key is not defined');
+        throw new Error("JWT public key is not defined");
     }
 
     return verify(token, publicKey) as TokenDTO;

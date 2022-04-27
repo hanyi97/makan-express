@@ -1,5 +1,5 @@
-import bcrypt from 'bcrypt';
-import User, { UserInput, UserOutput } from '../models/user';
+import bcrypt from "bcrypt";
+import User, { UserInput, UserOutput } from "../models/user";
 
 /**
  * Hashes the password and creates a new user.
@@ -10,7 +10,7 @@ import User, { UserInput, UserOutput } from '../models/user';
 export const create = async (user: UserInput): Promise<UserOutput> => {
     const foundUser = await User.findOne({ where: { email: user.email } });
     if (foundUser) {
-        throw new Error('User already exists');
+        throw new Error("User already exists");
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -26,7 +26,7 @@ export const create = async (user: UserInput): Promise<UserOutput> => {
  * @returns Promise<UserOutput[]> Promise that resolves to an array of all users.
  */
 export const getAll = async (): Promise<UserOutput[]> => {
-    return await User.findAll({ attributes: { exclude: ['password'] } });
+    return await User.findAll({ attributes: { exclude: ["password"] } });
 };
 
 /**
@@ -36,9 +36,9 @@ export const getAll = async (): Promise<UserOutput[]> => {
  * @returns Promise<UserOutput> Promise that resolves to the user with the given id.
  */
 export const getById = async (id: string): Promise<UserOutput> => {
-    const user = await User.findByPk(id, { attributes: { exclude: ['password'] } });
+    const user = await User.findByPk(id, { attributes: { exclude: ["password"] } });
     if (!user) {
-        throw new Error('User not found');
+        throw new Error("User not found");
     }
     return user;
 };
@@ -53,7 +53,7 @@ export const getById = async (id: string): Promise<UserOutput> => {
 export const update = async (id: string, updateUser: UserInput): Promise<UserOutput> => {
     const user = await User.findByPk(id);
     if (!user) {
-        throw new Error('User not found');
+        throw new Error("User not found");
     }
     return await user.update(updateUser);
 };

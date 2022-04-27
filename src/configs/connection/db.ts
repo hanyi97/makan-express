@@ -1,16 +1,16 @@
-import path from 'path';
-import { Sequelize } from 'sequelize-typescript';
-import { Dialect } from 'sequelize/types';
+import path from "path";
+import { Sequelize } from "sequelize-typescript";
+import { Dialect } from "sequelize/types";
 
-const modelsPath = path.join(__dirname, '../../models');
+const modelsPath = path.join(__dirname, "../../models");
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const configSqlite = {
     database: String(process.env.DB_NAME),
     username: String(process.env.DB_USER),
     password: String(process.env.DB_PASSWORD),
-    dialect: <Dialect>'sqlite',
-    storage: 'makan-express.sqlite',
+    dialect: <Dialect>"sqlite",
+    storage: "makan-express.sqlite",
     models: [modelsPath],
 };
 
@@ -19,7 +19,7 @@ const sqliteDb = new Sequelize(configSqlite);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const configMssql = {
     host: String(process.env.DB_HOST),
-    dialect: <Dialect>'mssql',
+    dialect: <Dialect>"mssql",
     port: 1433,
     pool: {
         max: 5,

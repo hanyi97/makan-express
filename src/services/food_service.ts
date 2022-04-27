@@ -1,4 +1,4 @@
-import Food, { FoodInput, FoodOutput } from '../models/food';
+import Food, { FoodInput, FoodOutput } from "../models/food";
 
 /**
  * Creates a new food.
@@ -28,7 +28,7 @@ export const getAll = async (): Promise<FoodOutput[]> => {
 export const getById = async (id: number): Promise<FoodOutput> => {
     const food = await Food.findByPk(id);
     if (!food) {
-        throw new Error('Food not found');
+        throw new Error("Food not found");
     }
     return food;
 };
@@ -43,7 +43,7 @@ export const getById = async (id: number): Promise<FoodOutput> => {
 export const update = async (id: number, updateFood: FoodInput): Promise<FoodOutput> => {
     const food = await Food.findByPk(id);
     if (!food) {
-        throw new Error('Food not found');
+        throw new Error("Food not found");
     }
     return await food.update(updateFood);
 };
