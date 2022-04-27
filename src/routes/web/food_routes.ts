@@ -1,5 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/web/food_controllers';
+import * as controller from '../../controllers/web/food_controllers';
 
 const router = express.Router();
 

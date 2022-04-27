@@ -1,6 +1,6 @@
 import express from 'express';
-import { authorize } from '../configs/middlware/auth';
-import * as controller from '../controllers/web/user_controllers';
+import { authorize } from '../../configs/middlware/auth';
+import * as controller from '../../controllers/common/user_controllers';
 
 const router = express.Router();
 

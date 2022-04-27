@@ -1,16 +1,15 @@
 import express from 'express';
-import authRoutes from './auth_routes';
-import userRoutes from './user_routes';
-import foodRoutes from './food_routes';
+import commonRoutes from './common/common_routes';
+import mobileRoutes from './mobile/mobile_routes';
+import webRoutes from './web/web_routes';
 
 const router = express.Router();
 
 /**
- * Add your routes here.
  * All routes are prefixed with /api
  */
-router.use('/auth', authRoutes);
-router.use('/users', userRoutes);
-router.use('/food', foodRoutes);
+router.use('/', commonRoutes);
+router.use('/', mobileRoutes);
+router.use('/web', webRoutes);
 
 export default router;
