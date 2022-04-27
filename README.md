@@ -46,6 +46,7 @@ Here are the npm libraries used to aid with development:
 - Watches for changes in files and restarts the server.
 - Don't need to restart server manually.
 ---
+
 ## Project Structure
 ### Folder Structure
 ```
