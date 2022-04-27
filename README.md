@@ -36,7 +36,7 @@ Here are the npm libraries used to aid with development:
 
 ### Prettier
 - Code formatting tool.
-- Config file is located at `.prettierrc.json`
+- Config file is located at `.prettierrc.json` and eslint will read from it.
 
 ### Husky
 - Allows automated commit hooks.
@@ -45,7 +45,7 @@ Here are the npm libraries used to aid with development:
 ### Nodemon
 - Watches for changes in files and restarts the server.
 - Don't need to restart server manually.
-
+---
 ## Project Structure
 ### Folder Structure
 ```
