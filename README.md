@@ -28,6 +28,23 @@ npm run lint
 npm run lint:fix
 ```
 ---
+## Dev Tools
+Here are the npm libraries used to aid with development:
+### Eslint 
+- Standardize coding styles and set code-quality rules.
+- Config file is located at `.eslintrc.json`
+
+### Prettier
+- Code formatting tool.
+- Config file is located at `.prettierrc.json`
+
+### Husky
+- Allows automated commit hooks.
+- Checks for linting errors and prevents committing if there are any.
+
+### Nodemon
+- Watches for changes in files and restarts the server.
+- Don't need to restart server manually.
 
 ## Project Structure
 ### Folder Structure
