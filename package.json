@@ -7,8 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "ts-node src/app.ts",
         "dev": "nodemon",
-        "lint": "eslint src/**/*.ts",
-        "lint:fix": "eslint src/**/*.ts --fix"
+        "lint": "eslint src",
+        "lint:fix": "eslint src --fix"
     },
     "husky": {
         "hooks": {
