@@ -52,7 +52,6 @@ src
 ├── package.json
 ├── src
 │   ├── app.ts
-│   ├── server.ts
 │   ├── configs
 │   │   ├── connection
 │   │   │   ├── db.ts
@@ -64,11 +63,13 @@ src
 │   │       ├── error.ts
 │   │       └── not_found.ts
 │   ├── controllers
+│   │   ├── api_response.ts
+│   │   ├── common
+│   │   │   ├── auth_controllers.ts
+│   │   │   └── user_controllers.ts
 │   │   ├── mobile
 │   │   └── web
-│   │       ├── auth_controllers.ts
-│   │       ├── food_controllers.ts
-│   │       └── user_controllers.ts
+│   │       └── food_controllers.ts
 │   ├── dtos
 │   │   ├── login_dto.ts
 │   │   └── token_dto.ts
@@ -76,10 +77,17 @@ src
 │   │   ├── food.ts
 │   │   └── user.ts
 │   ├── routes
-│   │   ├── auth_routes.ts
-│   │   ├── food_routes.ts
+│   │   ├── common
+│   │   │   ├── auth_routes.ts
+│   │   │   ├── common_routes.ts
+│   │   │   └── user_routes.ts
+│   │   ├── mobile
+│   │   │   └── mobile_routes.ts
 │   │   ├── routes.ts
-│   │   └── user_routes.ts
+│   │   └── web
+│   │       ├── food_routes.ts
+│   │       └── web_routes.ts
+│   ├── server.ts
 │   ├── services
 │   │   ├── auth_service.ts
 │   │   ├── food_service.ts
