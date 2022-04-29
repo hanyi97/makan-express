@@ -27,10 +27,7 @@ interface UserAttributes {
 export type UserInput = Optional<UserAttributes, "id" | "address">;
 export type UserOutput = UserAttributes;
 
-@Table({
-    timestamps: true,
-    paranoid: true,
-})
+@Table({ tableName: "user" })
 export default class User extends Model<UserAttributes, UserInput> implements UserAttributes {
     @PrimaryKey
     @Default(DataTypes.UUIDV4)

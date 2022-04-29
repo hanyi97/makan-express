@@ -14,10 +14,7 @@ interface FoodAttributes {
 export type FoodInput = Optional<FoodAttributes, "id">;
 export type FoodOutput = FoodAttributes;
 
-@Table({
-    timestamps: true,
-    paranoid: true,
-})
+@Table({ tableName: "food" })
 export default class Food extends Model<FoodAttributes, FoodInput> implements FoodAttributes {
     @AutoIncrement
     @PrimaryKey
