@@ -34,34 +34,37 @@ export type UserOutput = UserAttributes;
 export default class User extends Model<UserAttributes, UserInput> implements UserAttributes {
     @PrimaryKey
     @Default(DataTypes.UUIDV4)
-    @Column
+    @Column({ field: "user_id" })
     id!: string;
 
-    @Column
+    @Column({ field: "user_first_name" })
     firstName!: string;
 
-    @Column
+    @Column({ field: "user_last_name" })
     lastName!: string;
 
-    @Column
+    @Column({ field: "user_email" })
     email!: string;
 
-    @Column
+    @Column({ field: "user_phone_number" })
     phoneNumber!: string;
 
-    @Column
+    @Column({ field: "user_password" })
     password!: string;
 
     @AllowNull
-    @Column
+    @Column({ field: "user_address" })
     address?: string;
 
     @CreatedAt
-    createdAt?: Date | undefined;
+    @Column({ field: "created_at" })
+    createdAt?: Date;
 
     @UpdatedAt
-    updatedAt?: Date | undefined;
+    @Column({ field: "updated_at" })
+    updatedAt?: Date;
 
     @DeletedAt
-    deletedAt?: Date | undefined;
+    @Column({ field: "deleted_at" })
+    deletedAt?: Date;
 }

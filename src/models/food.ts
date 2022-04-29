@@ -21,24 +21,27 @@ export type FoodOutput = FoodAttributes;
 export default class Food extends Model<FoodAttributes, FoodInput> implements FoodAttributes {
     @AutoIncrement
     @PrimaryKey
-    @Column
+    @Column({ field: "food_id" })
     id!: number;
 
-    @Column
+    @Column({ field: "food_name" })
     name!: string;
 
-    @Column
+    @Column({ field: "food_desc" })
     description!: string;
 
-    @Column
+    @Column({ field: "food_price" })
     price!: number;
 
     @CreatedAt
+    @Column({ field: "created_at" })
     createdAt!: Date;
 
     @UpdatedAt
+    @Column({ field: "updated_at" })
     updatedAt!: Date;
 
     @DeletedAt
+    @Column({ field: "deleted_at" })
     deletedAt!: Date;
 }
