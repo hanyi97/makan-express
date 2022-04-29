@@ -98,13 +98,14 @@ src
 │   │   ├── common
 │   │   │   ├── auth_routes.ts
 │   │   │   ├── common_routes.ts
+│   │   │   ├── index.ts
 │   │   │   └── user_routes.ts
 │   │   ├── mobile
-│   │   │   └── mobile_routes.ts
+│   │   │   └── index.ts
 │   │   ├── routes.ts
 │   │   └── web
 │   │       ├── food_routes.ts
-│   │       └── web_routes.ts
+│   │       └── index.ts
 │   ├── server.ts
 │   ├── services
 │   │   ├── auth_service.ts
