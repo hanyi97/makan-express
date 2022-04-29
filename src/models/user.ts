@@ -31,7 +31,7 @@ export type UserOutput = UserAttributes;
     timestamps: true,
     paranoid: true,
 })
-class User extends Model<UserAttributes, UserInput> implements UserAttributes {
+export default class User extends Model<UserAttributes, UserInput> implements UserAttributes {
     @PrimaryKey
     @Default(DataTypes.UUIDV4)
     @Column
@@ -65,5 +65,3 @@ class User extends Model<UserAttributes, UserInput> implements UserAttributes {
     @DeletedAt
     deletedAt?: Date | undefined;
 }
-
-export default User;

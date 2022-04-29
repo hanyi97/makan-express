@@ -18,7 +18,7 @@ export type FoodOutput = FoodAttributes;
     timestamps: true,
     paranoid: true,
 })
-class Food extends Model<FoodAttributes, FoodInput> implements FoodAttributes {
+export default class Food extends Model<FoodAttributes, FoodInput> implements FoodAttributes {
     @AutoIncrement
     @PrimaryKey
     @Column
@@ -42,5 +42,3 @@ class Food extends Model<FoodAttributes, FoodInput> implements FoodAttributes {
     @DeletedAt
     deletedAt!: Date;
 }
-
-export default Food;
