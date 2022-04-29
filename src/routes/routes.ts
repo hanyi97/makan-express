@@ -1,7 +1,7 @@
 import express from "express";
-import commonRoutes from "./common/common_routes";
-import mobileRoutes from "./mobile/mobile_routes";
-import webRoutes from "./web/web_routes";
+import commonRoutes from "./common";
+import mobileRoutes from "./mobile";
+import webRoutes from "./web";
 
 const router = express.Router();
 
