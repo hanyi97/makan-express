@@ -36,9 +36,9 @@ const configMssql = {
  * NOTE: Uncomment the following lines to use mssql.
  */
 
-/*const mssqlDb = new Sequelize(
-    String(process.env.DB_USER),
+const mssqlDb = new Sequelize(
     String(process.env.DB_NAME),
+    String(process.env.DB_USER),
     String(process.env.DB_PASSWORD),
     configMssql,
 );
@@ -46,14 +46,11 @@ const configMssql = {
 (async () => {
     try {
         await mssqlDb.authenticate();
-        console.log('Connection has been established successfully.');
+        console.log("Connection has been established successfully.");
     } catch (error) {
-        console.error('Unable to connect to the database:', error);
+        console.error("Unable to connect to the database:", error);
     }
-})();*/
+})();
 
-export {
-    sqliteDb,
-    // mssqlDb,
-};
-export default sqliteDb;
+export { sqliteDb, mssqlDb };
+export default mssqlDb;
